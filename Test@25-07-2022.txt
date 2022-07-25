@@ -1,0 +1,155 @@
+
+1)   Program to find duplicate characters in string..
+-> public class DuplicateCharacters  
+{  
+    public static void Main()  
+    {  
+        String str = "Xworkz BTM,Bangalore";  
+        int count;  
+            char[] string1 = str.ToCharArray();  
+          
+        Console.WriteLine("Duplicate characters in a given string: ");  
+        for(int i = 0; i <string1.Length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <string1.Length; j++) {  
+                if(string1[i] == string1[j] && string1[i] != ' ') {  
+                    count++;  
+                    string1[j] = '0';  
+                }  
+            }  
+            if(count > 1 && string1[i] != '0')  
+                Console.WriteLine(string1[i]);  
+        }  
+    }  
+}  
+2)Program to calculate total number of vowels in a String.
+->
+   public class CountVowels {
+
+	public static void main(String[] args) {
+
+		int vowelCount = 0, 
+
+		String str = "Xworkz BTM Bangalore";
+
+		str = str.toLowerCase();
+
+		for (int i = 0; i < str.length(); i++) {
+
+			if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o'
+					|| str.charAt(i) == 'u') {
+
+				vowelCount++;
+			}
+		}
+		System.out.println("Number of vowels: " + vowelCount);
+}
+
+
+
+3) Program to reverse String
+
+->
+public class ReverseString {
+
+	public static void main(String args[]) {
+		String s;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a String: ");
+		s = sc.nextLine();
+		System.out.print("After reverse string is: ");
+		for (int i = s.length(); i > 0; --i) {
+			System.out.print(s.charAt(i - 1));
+		}
+	}
+
+}
+
+4) Program to count  the number of digits.
+
+public class Count {
+
+	public static void main(String[] args) {
+
+		int count = 0, num = 123456;
+
+		while (num != 0) {
+			num /= 10;
+			++count;
+		}
+
+		System.out.println("Number of digits: " + count);
+	}
+
+}
+
+5) Write a program to find the 3rd highest number of an integer.
+
+public class LargestNumberRunner {
+
+	public static int getThirdLargest(int[] a, int total) {
+		int temp;
+		for (int i = 0; i < total; i++) {
+			for (int j = i + 1; j < total; j++) {
+				if (a[i] > a[j]) {
+					temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		return a[total - 3];
+	}
+
+	public static void main(String args[]) {
+		int a[] = { 1, 2, 5, 6, 3, 2 };
+		int b[] = { 44, 66, 99, 77, 33, 22, 55 };
+		System.out.println("Third Largest: " + getThirdLargest(a, 6));
+		System.out.println("Third Largest: " + getThirdLargest(b, 7));
+	}
+}
+
+
+6) Prove String is Immutable by any program.
+
+public class Immutable {
+
+	public static void main(String[] args) {
+		String str1 = "123";
+		String str2 = "123";
+
+		System.out.println(str1 == str2); 
+
+		str1 = str2 + "456";
+
+		System.out.println(str1 == str2); 
+	}
+
+}
+
+
+7. Write a program to find a prime number 
+
+public class PrimeNumber {
+
+	public static void main(String args[]) {
+		int i, m = 0, flag = 0;
+		int n = 3;
+		m = n / 2;
+		if (n == 0 || n == 1) {
+			System.out.println(n + " is not prime number");
+		} else {
+			for (i = 2; i <= m; i++) {
+				if (n % i == 0) {
+					System.out.println(n + " is not prime number");
+					flag = 1;
+					break;
+				}
+			}
+			if (flag == 0) {
+				System.out.println(n + " is prime number");
+			}
+		} 
+	}
+
+}
